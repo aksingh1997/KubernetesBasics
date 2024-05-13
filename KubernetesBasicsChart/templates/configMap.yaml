@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: { { .Values.bookConfigMap.name } }
+data:
+  book:
+    maths:
+      name: RD-Sharma
+      price: 900
+    physics:
+      name: HC-Verma
+      price: 450
+    chemistry:
+      name: S-Chand
+      price: 800
