@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: "armun/kubernetes-basics"
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "v1"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -106,4 +106,4 @@ tolerations: []
 affinity: {}
 
 bookConfigMap:
-  name: bookConfigMap
+ name: bookConfigMap
