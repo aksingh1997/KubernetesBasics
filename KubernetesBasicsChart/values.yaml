@@ -6,17 +6,17 @@ replicaCount: 1
 
 image:
   repository: "armun/kubernetes-basics"
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v1"
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "KubernetesBasics"
+fullnameOverride: "kubernetes-basics"
 
 serviceAccount:
   # Specifies whether a service account should be created
-  create: true
+  create: false
   # Automatically mount a ServiceAccount's API credentials?
   automount: true
   # Annotations to add to the service account
@@ -73,12 +73,15 @@ resources: {}
 
 livenessProbe:
   httpGet:
-    path: /
-    port: http
+    path: /get-all-books
+    port: 8080
+  initialDelaySeconds: 30
 readinessProbe:
   httpGet:
-    path: /
-    port: http
+    path: /get-all-books
+    port: 8080
+  initialDelaySeconds: 15
+
 
 autoscaling:
   enabled: true
@@ -89,13 +92,13 @@ autoscaling:
 
 # Additional volumes on the output Deployment definition.
 volumes:
-  name: bookUtil
-  configMap:
-    name: bookConfigMap
+  - name: book-util
+    configMap:
+      name: book-config-map
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts:
- - name: bookUtil
+ - name: book-util
    mountPath: "/etc/bookUtil"
    readOnly: true
 

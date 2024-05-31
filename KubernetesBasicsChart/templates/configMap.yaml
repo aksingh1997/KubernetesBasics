@@ -1,15 +1,16 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: { { .Values.bookConfigMap.name } }
+  name: book-config-map
 data:
-  book:
-    maths:
-      name: RD-Sharma
-      price: 900
-    physics:
-      name: HC-Verma
-      price: 450
-    chemistry:
-      name: S-Chand
-      price: 800
+  application.yaml: | 
+   book:
+     maths:
+       name: RD-Sharma
+       price: 900
+     physics:
+       name: HC-Verma
+       price: 450
+     chemistry:
+       name: S-Chand
+       price: 800

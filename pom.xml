@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.abhi</groupId>
 	<artifactId>Kubernetes</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>Kubernetes</name>
 	<description>project for Kubernetes</description>
 	<properties>
