@@ -17,7 +17,7 @@ Points helpful for making Docker / Kubernetes / Helm charts -
     Command to see logs of pod lifecycle (Essential for konwing pod health and debugging) - (kubectl describe {pod-name})
 15. If pod enters the ready state, get the url from minikube to hit it from postman or browser. Command- (minikube service --url kubernetes-basics).
 16. If things go wrong, delete the release and try again. Command to delete the releae- (helm uninstall {release-name}).
-17. ToDo-- Read about helm upgrade, ingress, egress, node affinity
+17. ToDo-- Read about helm upgrade, ingress, egress, node affinity, istio
 18. Some useful kubectl coammnds -
     1. kubectl get deployments
     2. kubectl get services
